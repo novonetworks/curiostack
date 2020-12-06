@@ -69,7 +69,7 @@ public abstract class TypeSpecificMarshaller<T extends Message> {
     mergeValue(parser, currentDepth, builder);
     // T.newBuilderForType().buildAndAdd() is T
     @SuppressWarnings("unchecked")
-    T built = (T) builder.build();
+    T built = (T) builder.buildPartial();
     return built;
   }
 
@@ -99,7 +99,7 @@ public abstract class TypeSpecificMarshaller<T extends Message> {
     doMerge(parser, currentDepth, builder);
     // T.newBuilderForType().buildAndAdd() is T
     @SuppressWarnings("unchecked")
-    T built = (T) builder.build();
+    T built = (T) builder.buildPartial();
     return built;
   }
 

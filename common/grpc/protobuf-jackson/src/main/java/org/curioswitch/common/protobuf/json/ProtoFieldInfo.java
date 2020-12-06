@@ -133,7 +133,7 @@ class ProtoFieldInfo {
    */
   Message valuePrototype() {
     Message nestedPrototype =
-        containingPrototype.newBuilderForType().newBuilderForField(field).build();
+        containingPrototype.newBuilderForType().newBuilderForField(field).buildPartial();
     if (isMapField()) {
       // newBuilderForField will give us the Message corresponding to the map with key and value,
       // but we want the marshaller for the value itself.
@@ -276,8 +276,8 @@ class ProtoFieldInfo {
                           mapKeyField.descriptor(), mapKeyField.descriptor().getDefaultValue())
                       .setField(
                           mapValueField.descriptor(), mapValueField.descriptor().getDefaultValue())
-                      .build())
-              .build();
+                      .buildPartial())
+              .buildPartial();
       try {
         return messageClass
             .getDeclaredMethod(
@@ -298,7 +298,7 @@ class ProtoFieldInfo {
             .addRepeatedField(
                 valueField().descriptor(),
                 valueField().descriptor().getEnumType().getValues().get(0))
-            .build();
+            .buildPartial();
     try {
       return ((List<?>) getEnumAsClassMethod().invoke(msgWithEnumValue)).get(0).getClass();
     } catch (IllegalAccessException | InvocationTargetException e) {
@@ -312,7 +312,7 @@ class ProtoFieldInfo {
    */
   Class<?> javaClass() {
     if (isMapField() && valueJavaType() == JavaType.MESSAGE) {
-      Message mapEntry = containingPrototype.newBuilderForType().newBuilderForField(field).build();
+      Message mapEntry = containingPrototype.newBuilderForType().newBuilderForField(field).buildPartial();
       return mapEntry.getField(mapEntry.getDescriptorForType().findFieldByName("value")).getClass();
     }
     switch (valueJavaType()) {
@@ -336,7 +336,7 @@ class ProtoFieldInfo {
         return containingPrototype
             .newBuilderForType()
             .newBuilderForField(valueField().descriptor())
-            .build()
+            .buildPartial()
             .getClass();
       default:
         throw new IllegalArgumentException("Unknown field type: " + valueJavaType());
