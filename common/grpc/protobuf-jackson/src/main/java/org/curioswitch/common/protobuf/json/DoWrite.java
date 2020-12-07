@@ -358,8 +358,8 @@ final class DoWrite implements ByteCodeAppender, Implementation {
       // }
       // if (message.getBarCount() != 0) {
       //   ...
-      // }
-      if (!includeDefaults
+      // }c
+      if ((!field.isRequired() && !includeDefaults)
           // Only print one-of fields if they're actually set (the default of a one-of is an empty
           // one-of).
           || field.isInOneof()

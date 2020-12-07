@@ -96,6 +96,11 @@ class ProtoFieldInfo {
     return field.isRepeated();
   }
 
+  /** Returns whether this field is in a oneof. */
+  boolean isRequired() {
+    return field.isRequired();
+  }
+
   /** Returns the {@link ProtoFieldInfo} of the key for this map field. */
   @Nullable
   ProtoFieldInfo mapKeyField() {
