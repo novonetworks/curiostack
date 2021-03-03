@@ -330,7 +330,7 @@ class ProtoFieldInfo {
       case BYTE_STRING:
         return ByteString.class;
       case ENUM:
-        Class<?> clazz = field.getDefaultValue().getClass();
+        Class<?> clazz = field.getEnumType().getValues().get(0).getClass();
         return clazz;
       case MESSAGE:
         return containingPrototype
