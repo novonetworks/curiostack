@@ -532,12 +532,16 @@ final class DoWrite implements ByteCodeAppender, Implementation {
               boolean.class,
               afterSerializeField);
         case ENUM:
-          return checkPrimitiveDefault(
+          return new StackManipulation.Compound(
+            locals.load(LocalVariable.message),
+            invoke(info.hasValueMethod()),
+            new IfFalse(afterSerializeField));
+          /*return checkPrimitiveDefault(
               getValue,
               IntegerConstant.forValue(
-                  ((EnumValueDescriptor) info.descriptor().getDefaultValue()).getNumber()),
+                  ((EnumValueDescriptor) info.descriptor().getDefaultValue())),
               int.class,
-              afterSerializeField);
+              afterSerializeField);*/
         case STRING:
           return new StackManipulation.Compound(
               getValue,

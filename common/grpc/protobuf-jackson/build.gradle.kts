@@ -80,6 +80,12 @@ publishing {
             }
         }
     }
+    repositories {
+        maven {
+            url = uri("$rootDir/maven-repo")
+        }
+    }
+
 }
 
 tasks {

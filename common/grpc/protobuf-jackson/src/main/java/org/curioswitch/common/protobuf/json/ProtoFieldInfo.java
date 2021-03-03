@@ -144,9 +144,9 @@ class ProtoFieldInfo {
    */
   Method getValueMethod() {
     StringBuilder methodName = new StringBuilder().append("get").append(camelCaseName);
-    if (valueJavaType() == JavaType.ENUM) {
+    /*if (valueJavaType() == JavaType.ENUM) {
       methodName.append("Value");
-    }
+    }*/
     if (isMapField()) {
       methodName.append("Map");
     } else if (field.isRepeated()) {
@@ -221,9 +221,9 @@ class ProtoFieldInfo {
       }
     }
     setter.append(camelCaseName);
-    if (valueType() == Type.ENUM) {
+    /*if (valueType() == Type.ENUM) {
       setter.append("Value");
-    }
+    }*/
     try {
       return builderClass.getDeclaredMethod(setter.toString(), args);
     } catch (NoSuchMethodException e) {
