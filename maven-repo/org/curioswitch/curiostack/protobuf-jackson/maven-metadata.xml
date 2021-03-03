@@ -3,13 +3,14 @@
   <groupId>org.curioswitch.curiostack</groupId>
   <artifactId>protobuf-jackson</artifactId>
   <versioning>
-    <latest>1.2.0.2-fix-enum</latest>
-    <release>1.2.0.2-fix-enum</release>
+    <latest>1.2.0.3-fix-enum</latest>
+    <release>1.2.0.3-fix-enum</release>
     <versions>
       <version>1.2.0-fix-enum</version>
       <version>1.2.0.1-fix-enum</version>
       <version>1.2.0.2-fix-enum</version>
+      <version>1.2.0.3-fix-enum</version>
     </versions>
-    <lastUpdated>20210303052624</lastUpdated>
+    <lastUpdated>20210303053422</lastUpdated>
   </versioning>
 </metadata>
