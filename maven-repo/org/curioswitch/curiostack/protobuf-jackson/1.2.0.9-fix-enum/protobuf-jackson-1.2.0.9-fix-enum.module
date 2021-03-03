@@ -1,0 +1,230 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.curioswitch.curiostack",
+    "module": "protobuf-jackson",
+    "version": "1.2.0.9-fix-enum",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8.3",
+      "buildId": "tfgmkoppivhwthsvhp3pqujrru"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.curioswitch.curiostack",
+          "module": "curiostack-bom",
+          "version": {
+            "requires": "0.7.0"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ],
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.12.1"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        },
+        {
+          "group": "com.google.protobuf",
+          "module": "protobuf-java",
+          "version": {
+            "requires": "3.15.3"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "protobuf-jackson-1.2.0.9-fix-enum.jar",
+          "url": "protobuf-jackson-1.2.0.9-fix-enum.jar",
+          "size": 104339,
+          "sha512": "ca20d34039ca55f1d3a3cbf77e10030de709cdf346ee61528ed1ab5746c432b457bb1848685dd7ce7b49e233e449e324c39000a5ac2bb3f42f8bcca2b0b31c07",
+          "sha256": "bde9fb8ab4c3cdf2716cfeb05c3e91c4b555819a39e1646fb2ceacfe18359d3e",
+          "sha1": "d94e44d64471e0ad0d0c3b9055e4c465ee72342d",
+          "md5": "e41ba429620d3c56d92897c31bc259e4"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "jakarta.annotation",
+          "module": "jakarta.annotation-api",
+          "version": {
+            "requires": "1.3.5"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        },
+        {
+          "group": "net.bytebuddy",
+          "module": "byte-buddy",
+          "version": {
+            "requires": "1.10.20"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        },
+        {
+          "group": "com.google.guava",
+          "module": "guava",
+          "version": {
+            "requires": "30.1-jre"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        },
+        {
+          "group": "org.curioswitch.curiostack",
+          "module": "curiostack-bom",
+          "version": {
+            "requires": "0.7.0"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ],
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.12.1"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        },
+        {
+          "group": "com.google.protobuf",
+          "module": "protobuf-java",
+          "version": {
+            "requires": "3.15.3"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "protobuf-jackson-1.2.0.9-fix-enum.jar",
+          "url": "protobuf-jackson-1.2.0.9-fix-enum.jar",
+          "size": 104339,
+          "sha512": "ca20d34039ca55f1d3a3cbf77e10030de709cdf346ee61528ed1ab5746c432b457bb1848685dd7ce7b49e233e449e324c39000a5ac2bb3f42f8bcca2b0b31c07",
+          "sha256": "bde9fb8ab4c3cdf2716cfeb05c3e91c4b555819a39e1646fb2ceacfe18359d3e",
+          "sha1": "d94e44d64471e0ad0d0c3b9055e4c465ee72342d",
+          "md5": "e41ba429620d3c56d92897c31bc259e4"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "protobuf-jackson-1.2.0.9-fix-enum-javadoc.jar",
+          "url": "protobuf-jackson-1.2.0.9-fix-enum-javadoc.jar",
+          "size": 114515,
+          "sha512": "d20bffcaafe35b9b09db956a9086a6b7067dbd7ef58e9eff8dc1b4cbd041b1e3b1f082de73baea4a050ce01fee5728dad05176b0552cd1a23cc5151eed9c8ec3",
+          "sha256": "2639a1ea3121d35d36a6b5e35eae6604eeed37100a2603055d1915bb6ce9eccb",
+          "sha1": "8329aaef516c53f48a3cb2ecf19e9939f7b33548",
+          "md5": "eecbf94579e155f5c804d11ea66b7dbf"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "protobuf-jackson-1.2.0.9-fix-enum-sources.jar",
+          "url": "protobuf-jackson-1.2.0.9-fix-enum-sources.jar",
+          "size": 64065,
+          "sha512": "bcbb9635a9bb9b5e00be8fea0863c62d7e276d3b5c34bbfa3e2800be41c4737e0a2abc2360a5e88638bfade609f897473604d014d892bf77972a10fb06c52f28",
+          "sha256": "7ca2b87472b7617ae55721d393b9ab925603938d5573548cee27fbb964d4f7f5",
+          "sha1": "a8993a393b9943519e3775f510e9c81dbf36b88e",
+          "md5": "d607fe2b65f8b4bbf25d98a2c5910ee2"
+        }
+      ]
+    }
+  ]
+}

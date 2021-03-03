@@ -28,6 +28,7 @@ import static java.util.Objects.requireNonNull;
 import com.google.common.base.CaseFormat;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.DescriptorProtos;
+import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.Descriptors.FieldDescriptor.JavaType;
@@ -332,11 +333,12 @@ class ProtoFieldInfo {
       case BYTE_STRING:
         return ByteString.class;
       case ENUM:
-        DescriptorProtos.EnumDescriptorProto enumFileProto = field.getEnumType().toProto();
+        DescriptorProtos.EnumDescriptorProto enumProto = field.getEnumType().toProto();
+        Descriptors.FileDescriptor enumFile = field.getEnumType().getFile();
         String packageName = field.getFile().toProto().getPackage();
-        String fileName = enumFileProto.getName().replace(".proto", "");
+        String fileName = enumFile.toProto().getName().replace(".proto", "");
         String containingClassName =  CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, fileName);
-        String enumName =  enumFileProto.getName();
+        String enumName =  enumProto.getName();
         String enumClassName = String.format("%s.%s$%s", packageName,containingClassName, enumName);
 
         try {
