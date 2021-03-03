@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata,  -->
+  <!-- which should be used instead. Do not delete the following line which  -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.curioswitch.curiostack</groupId>
+  <artifactId>protobuf-jackson</artifactId>
+  <version>1.2.0.1-fix-enum</version>
+  <name>protobuf-jackson</name>
+  <description>A library for efficient marshalling of Protocol Buffer messages to and from JSON.</description>
+  <url>https://github.com/curioswitch/curiostack/tree/master/common/grpc/protobuf-jackson</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>chokoswitch</id>
+      <name>Choko</name>
+      <email>choko@curioswitch.org</email>
+      <organization>CurioSwitch</organization>
+      <organizationUrl>https://github.com/curioswitch/curiostack</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/curioswitch/curiostack.git</connection>
+    <developerConnection>scm:git:ssh://github.com:curioswitch/curiostack.git</developerConnection>
+    <url>https://github.com/curioswitch/curiostack</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.12.1</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>guava-jdk5</artifactId>
+          <groupId>com.google.guava</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>3.15.3</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>guava-jdk5</artifactId>
+          <groupId>com.google.guava</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.annotation</groupId>
+      <artifactId>jakarta.annotation-api</artifactId>
+      <version>1.3.5</version>
+      <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>guava-jdk5</artifactId>
+          <groupId>com.google.guava</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>net.bytebuddy</groupId>
+      <artifactId>byte-buddy</artifactId>
+      <version>1.10.20</version>
+      <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>guava-jdk5</artifactId>
+          <groupId>com.google.guava</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+</project>

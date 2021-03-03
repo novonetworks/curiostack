@@ -1,0 +1,217 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.curioswitch.curiostack",
+    "module": "protobuf-jackson",
+    "version": "1.2.0.1-fix-enum",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8.3",
+      "buildId": "6nx74rpyqrfg3d36ecy4kgvkka"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.curioswitch.curiostack",
+          "module": "curiostack-bom",
+          "version": {
+            "requires": "0.7.0"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ],
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.12.1"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        },
+        {
+          "group": "com.google.protobuf",
+          "module": "protobuf-java",
+          "version": {
+            "requires": "3.15.3"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "protobuf-jackson-1.2.0.1-fix-enum.jar",
+          "url": "protobuf-jackson-1.2.0.1-fix-enum.jar",
+          "size": 103714,
+          "sha512": "d3d3d60d4e8baf9a8908366e42865f4fef8c9fe277439f986e5b065665d9e04eb46df1432316f38640a337d17251c1ab56503585fed9d7c9019f699421ae33d0",
+          "sha256": "137475750d7704ec8b1921b57dbb7945bb8ce539798fa4c9299468e4949db394",
+          "sha1": "053ff487d0e15b76f09c929bc1d90e26358bc248",
+          "md5": "a02da171ac2d7f6a5709c1cd5c1f956c"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "jakarta.annotation",
+          "module": "jakarta.annotation-api",
+          "version": {
+            "requires": "1.3.5"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        },
+        {
+          "group": "net.bytebuddy",
+          "module": "byte-buddy",
+          "version": {
+            "requires": "1.10.20"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        },
+        {
+          "group": "org.curioswitch.curiostack",
+          "module": "curiostack-bom",
+          "version": {
+            "requires": "0.7.0"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ],
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.12.1"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        },
+        {
+          "group": "com.google.protobuf",
+          "module": "protobuf-java",
+          "version": {
+            "requires": "3.15.3"
+          },
+          "excludes": [
+            {
+              "group": "com.google.guava",
+              "module": "guava-jdk5"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "protobuf-jackson-1.2.0.1-fix-enum.jar",
+          "url": "protobuf-jackson-1.2.0.1-fix-enum.jar",
+          "size": 103714,
+          "sha512": "d3d3d60d4e8baf9a8908366e42865f4fef8c9fe277439f986e5b065665d9e04eb46df1432316f38640a337d17251c1ab56503585fed9d7c9019f699421ae33d0",
+          "sha256": "137475750d7704ec8b1921b57dbb7945bb8ce539798fa4c9299468e4949db394",
+          "sha1": "053ff487d0e15b76f09c929bc1d90e26358bc248",
+          "md5": "a02da171ac2d7f6a5709c1cd5c1f956c"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "protobuf-jackson-1.2.0.1-fix-enum-javadoc.jar",
+          "url": "protobuf-jackson-1.2.0.1-fix-enum-javadoc.jar",
+          "size": 114511,
+          "sha512": "3219f2051cda43cde48c8c313fb6168e7851daf8cd47953244d5c25e54d56c29ad96d150221dd82791282f6b6ed0cc7015fb8a84f807a82ae83bd4fa2e4db6a0",
+          "sha256": "8381a2524a12c1639d57fd03746a4fbd34b5fc33ba9771e62cabcae76d832b0b",
+          "sha1": "7c5c6c2883a1b622c4487758262d9c96667a811a",
+          "md5": "f7d31f52099b14bf9d6f73d218fba70e"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "protobuf-jackson-1.2.0.1-fix-enum-sources.jar",
+          "url": "protobuf-jackson-1.2.0.1-fix-enum-sources.jar",
+          "size": 63834,
+          "sha512": "30bcd920e87c1437d2f28755e1ac815d64d04e4b84490b3f66a6af1e58e4c026989b7e7fcff3c1e5bd52f55ba08a6d98cf7389610427064cd6ce5f3a078c3707",
+          "sha256": "91a4721b83e914b1c263b0d5022b3f14b870283225d434816685187446c4d570",
+          "sha1": "f2325ef2292d3b96a7d578d5f7b1298780a72450",
+          "md5": "ab43a0ac0457fc252ace93b30013c70b"
+        }
+      ]
+    }
+  ]
+}
