@@ -63,6 +63,7 @@ dependencies {
     api("com.google.protobuf:protobuf-java")
 
     implementation("net.bytebuddy:byte-buddy")
+    implementation("com.google.guava:guava:30.1-jre")
 
     testImplementation("org.curioswitch.curiostack:curio-testing-framework:0.0.6")
     testImplementation("org.junit.jupiter:junit-jupiter-params")

@@ -25,7 +25,9 @@ package org.curioswitch.common.protobuf.json;
 
 import static java.util.Objects.requireNonNull;
 
+import com.google.common.base.CaseFormat;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.Descriptors.FieldDescriptor.JavaType;
@@ -330,8 +332,15 @@ class ProtoFieldInfo {
       case BYTE_STRING:
         return ByteString.class;
       case ENUM:
+        DescriptorProtos.EnumDescriptorProto enumFileProto = field.getEnumType().toProto();
+        String packageName = field.getFile().toProto().getPackage();
+        String fileName = enumFileProto.getName().replace(".proto", "");
+        String containingClassName =  CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, fileName);
+        String enumName =  enumFileProto.getName();
+        String enumClassName = String.format("%s.%s$%s", packageName,containingClassName, enumName);
+
         try {
-          return Class.forName("com.novonetworks.dpms.device.DeviceProto$DeviceType");
+          return Class.forName(enumClassName);
         } catch (ClassNotFoundException error) {
           return null;
         }
