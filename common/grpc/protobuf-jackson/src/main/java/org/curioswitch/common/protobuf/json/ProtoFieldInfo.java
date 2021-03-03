@@ -333,13 +333,26 @@ class ProtoFieldInfo {
       case BYTE_STRING:
         return ByteString.class;
       case ENUM:
-        DescriptorProtos.EnumDescriptorProto enumProto = field.getEnumType().toProto();
+        Descriptors.EnumDescriptor enumType = field.getEnumType();
+        DescriptorProtos.EnumDescriptorProto enumProto = enumType.toProto();
         Descriptors.FileDescriptor enumFile = field.getEnumType().getFile();
         String packageName = field.getFile().toProto().getPackage();
         String fileName = enumFile.toProto().getName().replace(".proto", "");
-        String containingClassName =  CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, fileName);
-        String enumName =  enumProto.getName();
-        String enumClassName = String.format("%s.%s$%s", packageName,containingClassName, enumName);
+        String containingClassName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, fileName);
+        String enumName = enumProto.getName();
+        String enumClassName;
+        if (enumType.getContainingType() != null) {
+          String containingMessageName = enumType.getContainingType().toProto().getName();
+
+          enumClassName = String.format("%s.%s$%s$%s",
+            packageName,
+            containingClassName,
+            containingMessageName,
+            enumName
+          );
+        } else {
+          enumClassName = String.format("%s.%s$%s", packageName, containingClassName, enumName);
+        }
 
         try {
           return Class.forName(enumClassName);
