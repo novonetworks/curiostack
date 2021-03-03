@@ -330,8 +330,11 @@ class ProtoFieldInfo {
       case BYTE_STRING:
         return ByteString.class;
       case ENUM:
-        Class<?> clazz = field.getEnumType().getValues().get(0).getClass();
-        return clazz;
+        try {
+          return Class.forName("com.novonetworks.dpms.device.DeviceProto$DeviceType");
+        } catch (ClassNotFoundException error) {
+          return null;
+        }
       case MESSAGE:
         return containingPrototype
             .newBuilderForType()
